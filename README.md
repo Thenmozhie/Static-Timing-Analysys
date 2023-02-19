@@ -1,4 +1,5 @@
 # Static-Timing-Analysys
+
 OpenSTA
 OpenSTA is a static analysis tool, used to verify the timing of the design. Incremental updating of delays, arrivals, and required times are done using queries.
 This analysis provides timing checks -from, -through, -to, multiple paths to endpoint, delay calculation and also checks timing setup 
