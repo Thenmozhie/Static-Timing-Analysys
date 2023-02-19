@@ -1,4 +1,15 @@
 # Static-Timing-Analysys
+DAY1
+
+STA is the method of verifying timing performance of a design. It does not use test benches and does not check the functionality. It uses mathematical techniques instead of input vectors.
+Inputs to STA are gate level netlist, constraints file and logical libraries (delays, transition time, etc.,)
+STA breaks the design at ports and sequential elements (Path can be FF to port(I/O), FF to FF or port to FF)
+Timing elements includes, start point (usually input ports or reg clock pins), end point (usually output ports or reg data pins)
+Setup and hold time: The minimum amount of time, the data should be available(stable) at the input of sequential circuit before clock edge in the data path is called setup time. This enforces maximum delay.
+The minimum amount of time, the data should be stable at the input of sequential device after clock edge that captures data. This enforces minimum delay.
+Setup slack calculation,
+Setup slack = data required time – data arrival time
+Arrival time should always be less than the required time. Slack value should be positive. If we get negative value, then we need to fix.
 
 OpenSTA
 OpenSTA is a static analysis tool, used to verify the timing of the design. Incremental updating of delays, arrivals, and required times are done using queries.
