@@ -62,6 +62,10 @@ NAND3_X1 – Capacitance value is 4.27
 4.	Difference between simple_min.lib and simple_max.lib
 Ans: Fabrication process variations could either increase or decrease the delay of a cell. So, we need to set early and late value while setting the derate factor. STA tool would consider early or late timing derate based on the path and type of analysis.
 
-Standard Parasitic Exchange format (SPEF)
+Standard Parasitic Exchange format (SPEF):
+
+Describes parasitic information (electronic info like connectivity, capacitance, resistance and Inductance) of the design.
+SPEF file has 4 main sections, header, name map, top level ports, parasitic description.
+
 
 
