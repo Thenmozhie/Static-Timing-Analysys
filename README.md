@@ -42,11 +42,15 @@ Load Analysis: We can specify min and max capacitance on ports and nets, fanout 
 Clock Skew analysis: It's also important to consider the skew between the launch and capture clock waveforms; the skew is positive if the capture flop clock leads the launch flop clock and the skew is negative if the launch clock leads the capture clock.
 Latch Timing: 
 In flops, the data is launched and captured at the edges, whereas latched based designs allow more flexibility in timing. Data will be accepted at any time before the latch closes. Time borrowing is possible in latch. If one logic has more delay and other logic has less delay, then the time is borrowed from the logic which has less delay (next clock cycle).
- 
+
+![image](https://user-images.githubusercontent.com/87753795/220012673-a06ab667-a0c3-458a-9485-06d1b7c38904.png)
+
 
 STA Text Report Evaluation:
 STA tool will convert gate level representation to node and arc level representation. The diagram shows the discription of timing analysis report.
  
+ ![image](https://user-images.githubusercontent.com/87753795/220012709-1bdc791c-4ccd-435e-b21b-c758e3dd9e94.png)
+
 Lab 2
 1.	No of cells in simple_max file: 
 Ans: 211 (INV (X,Y,Z) = 30 + NAND2,NAND3,NAND4(X,Y,Z) = 120 + NOR2,NOR3,NOR4 (X,Y,Z) = 120, DFF_X80 = 1)
