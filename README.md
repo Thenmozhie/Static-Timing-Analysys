@@ -67,5 +67,7 @@ Standard Parasitic Exchange format (SPEF):
 Describes parasitic information (electronic info like connectivity, capacitance, resistance and Inductance) of the design.
 SPEF file has 4 main sections, header, name map, top level ports, parasitic description.
 
+![image](https://user-images.githubusercontent.com/87753795/220014306-14cc4e1d-01b3-45db-8ac4-bb1853df7326.png)
+
 
 
