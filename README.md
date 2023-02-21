@@ -30,7 +30,7 @@ Command - ![image](https://user-images.githubusercontent.com/87753795/220397353-
 ![image](https://user-images.githubusercontent.com/87753795/219973051-5f4d4a4e-8717-4b75-aaa4-2c667b682fb0.png)
 
 Output: 
-Slack should always be positive (meeting the time), If slack is negative, then we need to fix the issue.
+Slack should always be positive (meeting the time), If slack is negative, then we need to fix the issue.^ indicates rise edge, v indicates rise edge.
 ![image](https://user-images.githubusercontent.com/87753795/219973071-b6b41ca3-72ef-46b6-8272-fb69016168a2.png)
 ![image](https://user-images.githubusercontent.com/87753795/219973079-aa283bb1-a1ce-43d9-a533-a7b9ad39518b.png)
 
