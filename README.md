@@ -129,7 +129,9 @@ Different Delay value on path – hold check: STA uses min delay value on data p
 
 Lab 3:
 Understanding slack calcuation,
+
 ![image](https://user-images.githubusercontent.com/87753795/220229476-75b3789e-f01a-43f9-9a36-418c5bee3dc8.png)
+
 
 
 After running the above run file, the following slacks are obtained,
