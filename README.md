@@ -149,13 +149,25 @@ Different Delay value on path – setup check: Path delay can have min, max or n
 Different Delay value on path – hold check: STA uses min delay value on data path in launch side and max delay value in capture side.
 
 Lab 3:
+The below circuit id given for slack calculation,
+
+![image](https://user-images.githubusercontent.com/87753795/220415146-1f1a4a33-1950-49a7-8ad8-c696284be261.png)
+ 
+
 Understanding slack calcuation,
+
+![image](https://user-images.githubusercontent.com/87753795/220415190-bc014b24-9069-44fd-81e3-4bf1bd19174b.png)
+
+report_checks–from F1/CK -endpoint_count100
+
+STA will report 1 path per end point.
 
 ![image](https://user-images.githubusercontent.com/87753795/220229476-75b3789e-f01a-43f9-9a36-418c5bee3dc8.png)
 
 
 
-After running the above run file, the following slacks are obtained,
+After executing the above run file (command - sta run.tcl–exit | tee run.log), the following image shows the slacks are obtained. There are 8 path in our case.
+
 
 ![image](https://user-images.githubusercontent.com/87753795/220229498-d28dca0c-3512-4e92-831d-a23091d669c5.png)
 
