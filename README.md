@@ -69,5 +69,69 @@ SPEF file has 4 main sections, header, name map, top level ports, parasitic desc
 
 ![image](https://user-images.githubusercontent.com/87753795/220014306-14cc4e1d-01b3-45db-8ac4-bb1853df7326.png)
 
+DAY 3:
+Multiple clock:
+When there are multiple clocks with different frequencies, setup check is calculated by expanding the clock to common base period. STA used the most restrictive setup time. There are two rules for hold check. Rule1: Data launched at setup launch edge must not be captured by previous capture edge. Rule2: Data launched at next launch edge must not be captured by current setup capture edge.
+
+Timing Arc and Timing Sense:
+Timing arcs are of two types, 1- cell arcs (input to output), 2- net arcs (one cell to another cell).
+
+ ![image](https://user-images.githubusercontent.com/87753795/220229384-2cc90164-ed0f-4fcf-9764-de719e79cf41.png)
+
+Sequential arcs:
+
+ ![image](https://user-images.githubusercontent.com/87753795/220229410-582b2d40-a66f-49b5-9397-3826abcfb343.png)
+
+Combinational Arcs:
+Input A is connected to output and input B is connected to output and no state element is involved.
+
+Relation between combinational/sequential/cell and net arcs:
+Combinational arcs: Combinational arcs represent the propagation delay of signals through the logic gates and are typically modeled as logical functions or Boolean expressions. Combinational arc is where data can propagate combinational without needing any enabling signal typically clock. 
+
+Cell Arc: A cell arc represents the delay through a single logic cell or gate, such as an AND gate or an inverter. Cell arcs are typically characterized by the delay of the cell for different input combinations and are used in the delay calculation of the combinational arcs. In STA, both types of delays are used to analyze the timing behavior of a digital circuit. So, a cell arc can be both combinational or sequential and sometimes both for complex cells
+
+Combinational delays are used to calculate the critical path delay, while cell delays are used to calculate the delay of individual gates or cells in the circuit. The critical path is the longest path of combinational logic that determines the maximum operating frequency of the circuit.
+
+Combinational arcs in Static Timing Analysis include the net delays between sequential elements and the combinational logic that connects them. Cell arcs, on the other hand, are a subset of combinational arcs and refer to the delay through a single logic cell or gate. 
+
+In other words, a combinational arc represents the delay through the entire path that connects two sequential elements, which includes the delays of all the logic gates and wires in the path. The delay of a combinational arc is the sum of the cell delays of all the gates along the path, as well as the delay of the wires that connect the gates.
+
+Cell arcs are used to model the delay of individual gates or cells in the circuit, and are a key component of the delay calculation for the combinational arcs. The cell delay is typically measured by characterization, which involves measuring the delay of the gate or cell for different input patterns and loading conditions. So, while cell arcs are a subset of combinational arcs, they are also distinct in that they represent the delay through a single gate or cell, whereas a combinational arc represents the delay through an entire path of logic gates and wires.
+
+Timing sense: Positive unate arc (output follows input), Negative unate arc (output followes the input in opposite direction), Non-unate arc (when we can’t predict if the output is going to follow the input or not).
+
+Cell Delays:
+Cell delays calculations are the function of input transition (propagation delay), output load/capacitance.
+
+Positive clock slew: Capture clock delay is more. This skew helps in making the time to meet setup time.
+Negative clock skew: Capture clock delay is less. Less time window to meet setup time.
+Clock latency: clock source latency, network latency.
+
+Clock jitter: Practically, there will be more uncertainty in clock edges.
+![image](https://user-images.githubusercontent.com/87753795/220229444-02bbb132-88ab-4c6d-9fc0-b43fdfe67d16.png)
+
+Setup and hold in detained:
+Setup check:
+![image](https://user-images.githubusercontent.com/87753795/220229462-c0eeb6c1-498a-43e2-a03d-b87f76a86bc8.png)
+
+Setup check : Tc2q + Tcomb + Tsetup <= TPeriod + Tskew - Su
+Su = setup clock uncertainity
+
+Hold Check: Tc2q + Tcomb + Tsetup >= TPeriod + Tskew + Hu
+Hu = hold clock uncertainty
+
+Different Delay value on path – setup check: Path delay can have min, max or nominal value. STA to make setup pessimistic, uses max delay value on data path in launch side and min delay value in capture side.
+
+Different Delay value on path – hold check: STA uses min delay value on data path in launch side and max delay value in capture side.
+
+Lab 3:
+Understanding slack calcuation,
+![image](https://user-images.githubusercontent.com/87753795/220229476-75b3789e-f01a-43f9-9a36-418c5bee3dc8.png)
+
+After running the above run file, the following slacks are obtained,
+![image](https://user-images.githubusercontent.com/87753795/220229498-d28dca0c-3512-4e92-831d-a23091d669c5.png)
+
+
+
 
 
