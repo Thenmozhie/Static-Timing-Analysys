@@ -54,21 +54,32 @@ STA tool will convert gate level representation to node and arc level representa
  ![image](https://user-images.githubusercontent.com/87753795/220012709-1bdc791c-4ccd-435e-b21b-c758e3dd9e94.png)
 
 Lab 2
-The .lib file is an ASCII representation of the timing and power parameters associated with any cell in a particular semiconductor technology
-1.	No of cells in simple_max file: 
+The .lib file is an ASCII representation of the timing and power parameters associated with any cell in a particular semiconductor technology. Lib files contain I/O delay paths, Timing check values, Interconnect delays.
+
+![image](https://user-images.githubusercontent.com/87753795/220404328-bb606eff-a979-4aed-b034-871742f751be.png)
+
+![image](https://user-images.githubusercontent.com/87753795/220406263-2ac8e017-982b-422d-a749-fe79a033d36a.png)
+
+1.	No of cells in simple_max file: command used grep -c “cell “ simple_max.lib
 Ans: 211 (INV (X,Y,Z) = 30 + NAND2,NAND3,NAND4(X,Y,Z) = 120 + NOR2,NOR3,NOR4 (X,Y,Z) = 120, DFF_X80 = 1)
-2.	Pins of cell NAND2_X1:
+![image](https://user-images.githubusercontent.com/87753795/220409255-af5aa0d0-fbe7-49bb-9afe-958686d7bb33.png)
+
+2.	Pins of cell NAND2_X1 in simple_max.lib:
 Ans: 3 (Pin o,a,b)
+![image](https://user-images.githubusercontent.com/87753795/220409340-b52060a3-419b-4026-a05d-49463a4bad45.png)
+
 3.	Difference between NAND2_X1 and NAND3_X1
 Ans: NAND2_X1 – Capacitance value is 6.40
 NAND3_X1 – Capacitance value is 4.27
 4.	Difference between simple_min.lib and simple_max.lib
-Ans: Fabrication process variations could either increase or decrease the delay of a cell. So, we need to set early and late value while setting the derate factor. STA tool would consider early or late timing derate based on the path and type of analysis.
+Ans: Fabrication process variations could either increase or decrease the delay of a cell. Library files will have min and max values of delay which need to be considered for timing analysis. STA tool will make use of these libraries for analysis.
 
 Standard Parasitic Exchange format (SPEF):
 
 Describes parasitic information (electronic info like connectivity, capacitance, resistance and Inductance) of the design.
 SPEF file has 4 main sections, header, name map, top level ports, parasitic description.
+![image](https://user-images.githubusercontent.com/87753795/220410809-0ad7f668-e5a7-4ed9-8289-4400d8d07305.png)
+Understanding STA text report,
 
 ![image](https://user-images.githubusercontent.com/87753795/220014306-14cc4e1d-01b3-45db-8ac4-bb1853df7326.png)
 
