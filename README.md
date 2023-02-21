@@ -21,10 +21,12 @@ Simple.v is our design file. The file ‘sky130_fd_sc_hd_tt_025C_1v80.lib’ inc
 Run file,
 ![image](https://user-images.githubusercontent.com/87753795/219973029-73178340-616f-4edc-9767-2ea994264c35.png)
 Constraints creation:
-Sdc file,
+Sdc file consist of design and timing constrains as below, 
 ![image](https://user-images.githubusercontent.com/87753795/219973046-8e1ed088-7861-4d71-9582-351f4badb714.png)
 
 Execution of run file (run.tcl),
+Command - ![image](https://user-images.githubusercontent.com/87753795/220397353-8fa1f884-da5b-49db-8c83-5bd7868c0b2c.png)
+
 ![image](https://user-images.githubusercontent.com/87753795/219973051-5f4d4a4e-8717-4b75-aaa4-2c667b682fb0.png)
 
 Output: 
