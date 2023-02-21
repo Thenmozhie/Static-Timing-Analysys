@@ -108,11 +108,12 @@ Negative clock skew: Capture clock delay is less. Less time window to meet setup
 Clock latency: clock source latency, network latency.
 
 Clock jitter: Practically, there will be more uncertainty in clock edges.
-![image](https://user-images.githubusercontent.com/87753795/220229444-02bbb132-88ab-4c6d-9fc0-b43fdfe67d16.png)
 
+![image](https://user-images.githubusercontent.com/87753795/220229444-02bbb132-88ab-4c6d-9fc0-b43fdfe67d16.png)
 
 Setup and hold in detained:
 Setup check:
+
 ![image](https://user-images.githubusercontent.com/87753795/220229462-c0eeb6c1-498a-43e2-a03d-b87f76a86bc8.png)
 
 
