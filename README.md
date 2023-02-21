@@ -129,6 +129,7 @@ Understanding slack calcuation,
 ![image](https://user-images.githubusercontent.com/87753795/220229476-75b3789e-f01a-43f9-9a36-418c5bee3dc8.png)
 
 After running the above run file, the following slacks are obtained,
+
 ![image](https://user-images.githubusercontent.com/87753795/220229498-d28dca0c-3512-4e92-831d-a23091d669c5.png)
 
 
