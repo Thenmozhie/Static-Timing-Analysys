@@ -21,7 +21,7 @@ Simple.v is our design file. The file ‘sky130_fd_sc_hd_tt_025C_1v80.lib’ inc
 Run file,
 ![image](https://user-images.githubusercontent.com/87753795/219973029-73178340-616f-4edc-9767-2ea994264c35.png)
 Constraints creation:
-Sdc file consist of design and timing constrains as below, 
+Sdc file consist of design and timing constrains(rising and falling edge of input/output delays and transitions and load values) as below, 
 ![image](https://user-images.githubusercontent.com/87753795/219973046-8e1ed088-7861-4d71-9582-351f4badb714.png)
 
 Execution of run file (run.tcl),
@@ -54,6 +54,7 @@ STA tool will convert gate level representation to node and arc level representa
  ![image](https://user-images.githubusercontent.com/87753795/220012709-1bdc791c-4ccd-435e-b21b-c758e3dd9e94.png)
 
 Lab 2
+The .lib file is an ASCII representation of the timing and power parameters associated with any cell in a particular semiconductor technology
 1.	No of cells in simple_max file: 
 Ans: 211 (INV (X,Y,Z) = 30 + NAND2,NAND3,NAND4(X,Y,Z) = 120 + NOR2,NOR3,NOR4 (X,Y,Z) = 120, DFF_X80 = 1)
 2.	Pins of cell NAND2_X1:
