@@ -110,9 +110,11 @@ Clock latency: clock source latency, network latency.
 Clock jitter: Practically, there will be more uncertainty in clock edges.
 ![image](https://user-images.githubusercontent.com/87753795/220229444-02bbb132-88ab-4c6d-9fc0-b43fdfe67d16.png)
 
+
 Setup and hold in detained:
 Setup check:
 ![image](https://user-images.githubusercontent.com/87753795/220229462-c0eeb6c1-498a-43e2-a03d-b87f76a86bc8.png)
+
 
 Setup check : Tc2q + Tcomb + Tsetup <= TPeriod + Tskew - Su
 Su = setup clock uncertainity
@@ -127,6 +129,7 @@ Different Delay value on path – hold check: STA uses min delay value on data p
 Lab 3:
 Understanding slack calcuation,
 ![image](https://user-images.githubusercontent.com/87753795/220229476-75b3789e-f01a-43f9-9a36-418c5bee3dc8.png)
+
 
 After running the above run file, the following slacks are obtained,
 
