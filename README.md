@@ -54,6 +54,7 @@ STA tool will convert gate level representation to node and arc level representa
  ![image](https://user-images.githubusercontent.com/87753795/220012709-1bdc791c-4ccd-435e-b21b-c758e3dd9e94.png)
 
 Lab 2
+
 The .lib file is an ASCII representation of the timing and power parameters associated with any cell in a particular semiconductor technology. Lib files contain I/O delay paths, Timing check values, Interconnect delays.
 
 ![image](https://user-images.githubusercontent.com/87753795/220404328-bb606eff-a979-4aed-b034-871742f751be.png)
@@ -89,6 +90,7 @@ Understanding STA text report,
 ![image](https://user-images.githubusercontent.com/87753795/220014306-14cc4e1d-01b3-45db-8ac4-bb1853df7326.png)
 
 DAY 3:
+
 Multiple clock:
 When there are multiple clocks with different frequencies, setup check is calculated by expanding the clock to common base period. STA used the most restrictive setup time. There are two rules for hold check. Rule1: Data launched at setup launch edge must not be captured by previous capture edge. Rule2: Data launched at next launch edge must not be captured by current setup capture edge.
 
