@@ -166,7 +166,7 @@ STA will report 1 path per end point.
 
 
 
-After executing the above run file (command - sta run.tcl–exit | tee run.log), the following image shows the slacks are obtained. There are 8 path in our case.
+After executing the above run file (command - sta run.tcl–exit | tee run.log), the following image shows the slack claculation obtained for 8 path. 
 
 
 ![image](https://user-images.githubusercontent.com/87753795/220229498-d28dca0c-3512-4e92-831d-a23091d669c5.png)
