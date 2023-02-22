@@ -172,6 +172,106 @@ After executing the above run file (command - sta run.tcl–exit | tee run.log),
 ![image](https://user-images.githubusercontent.com/87753795/220229498-d28dca0c-3512-4e92-831d-a23091d669c5.png)
 
 
+DAY 4:
 
+Crosstalk and noise: As wires are closely connected, coupling capacitance was introduced. When the signal change (1 to 0) in one node (aggressor) affects the nearby node (victim) that is, aggressor forces the victim to change in the same direction as it changes. If the requirement of the victim node is same (1 to 0), then this causes victim signal to change faster because of which reduces delay. When the victim signal is changing in opposite direction, aggressor will try to push the victim in the same direction because of which the change is slow and this causes more delay.
+
+If there exist signal change in aggressor but no change or output in the victim side, there can be slight glitch/pulse in victim side which can cause functional failure.
+
+Impact of crosstalk and noise: delay, functional failure.
+
+STA must make sure that these are not present or present below threshold value.
+Other global variations like inter-die variations (variation in delay in different chip in the same wafer or different wafer) and intra-die variation (variation in delay within single chip). There are logical libraries with all this info which STA uses.
+
+Clock gating check: It is done if a signal can control the path of the clock in a cell. If clock feed a flop/latch clk pin, feed output port, feed generated clk, clk gating check is done. 
+•	Active high clock gating check (occurs in AND and NAND cell)
+•	Active low clock gating check (occurs in OR and NOR cell)
+•	If there exist other cells apart from mentioned in above points (complex cell), the tool will issue a warning and does not check.
+
+![image](https://user-images.githubusercontent.com/87753795/220523940-f59f5e1a-03b7-419c-beb2-5d91993ab6eb.png)
+
+
+Check on Async pin: Assertion is asynchronous event and no relation with clock. (eg: clear pin). De-assertion causes flop to become dependent on clock (timing checks needed, to avoid unknown state).
+
+LAB4:
+Clock gating checks
+Design file,
+
+![image](https://user-images.githubusercontent.com/87753795/220524016-ef260e18-9528-4dab-a4a4-a0267c1bf909.png)
+ 
+Run file,
+ 
+![image](https://user-images.githubusercontent.com/87753795/220524075-8d95c395-cb4e-4e80-bba3-1667c1d69865.png)
+
+Sdc file,
+
+![image](https://user-images.githubusercontent.com/87753795/220524109-fcc3fce6-4530-422c-9bfb-89cfce7145b2.png)
+
+OUTPUT:
+
+![image](https://user-images.githubusercontent.com/87753795/220524165-4152a7f7-b7ea-40c0-80bf-790739e5718a.png)
+
+Async pin check:
+Design file,
+
+![image](https://user-images.githubusercontent.com/87753795/220524210-79ba8c76-ad15-48a4-ba7a-a8a21a0519ad.png)
+
+Run file,
+
+![image](https://user-images.githubusercontent.com/87753795/220524251-29fd8778-0df9-4d11-b9c3-bd92361e291b.png)
+
+OUTPUT:
+
+![image](https://user-images.githubusercontent.com/87753795/220524278-bac6dc3f-5c15-4b7b-b067-14ecd78acec8.png)
+
+DAY 5:
+
+Clock group commands are used to tell STA tool between what clock you have to meet timing and between what clock you don’t have to meet timing. Sometimes it is not necessary to meet timing between all clocks.
+Synchronous clock, asynchronous clock, logically exclusive clock, physically exclusive clock.
+Command:
+Set_clock_group -asynchronous -group{clk1 clk2 clk3} -group{clk4 clk5 clk6}
+
+![image](https://user-images.githubusercontent.com/87753795/220524340-2766606e-e79a-41f3-9726-77965eba7522.png)
+
+Timing Exception: 
+Path specification: If we want to change the default behavior of this timing on path, we need specify on which path we are changing the behavior. (from, to, through)
+Timing exception commands,
+set_false_path   no timing check should be done.
+set_multicycle_path  If we want to modify the timing relationship (no. of cycles).
+set_max_delay  setup check (modify time check to specific delay value)
+set_min_delay  hold check
+set_disable_timing  used for disabling arcs in a cell.
+set_case_analysis  used to specify constant value in netlist that may or may not present, we can also overwrite with this command. (eg: in mux, two inputs are clks, selection line can be set using this command).
+
+LAB 5:
+Common Path Pessimism Removal(CPPR),
+
+![image](https://user-images.githubusercontent.com/87753795/220524397-eeb5f505-bd9a-49d5-a26f-e64b6ef3e0e4.png)
+
+Slack calculation without CPPR,
+Design file,
+
+![image](https://user-images.githubusercontent.com/87753795/220524441-1715e007-ba57-4e79-b9d8-f1175643d341.png)
+
+SDC file,
+
+![image](https://user-images.githubusercontent.com/87753795/220524472-09cc43a5-e864-42cb-83b7-8c1169b48c03.png)
+
+OUTPUT: execute run.tcl file.
+
+![image](https://user-images.githubusercontent.com/87753795/220524515-be3539ba-ba7f-48bb-ae45-ee309ded93ce.png)
+
+![image](https://user-images.githubusercontent.com/87753795/220524536-41693046-6c26-4c43-8f41-0f24fc259ffb.png)
+
+Slack calculation with CPPR,
+
+‘c2’ is node which requires CPPR, change the run file.
+Command- set sta_crpr_enabled 1
+
+![image](https://user-images.githubusercontent.com/87753795/220524566-896d9b8f-51d4-4ba4-9a52-525bcf102634.png)
+
+OUTPUT:
+
+![image](https://user-images.githubusercontent.com/87753795/220524617-e4ebb42c-16b6-4310-ab69-ad0bc8e67705.png)
 
 
