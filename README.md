@@ -283,4 +283,26 @@ OUTPUT:
 
 ![image](https://user-images.githubusercontent.com/87753795/220524617-e4ebb42c-16b6-4310-ab69-ad0bc8e67705.png)
 
+ECO –Engineering Change Order
+•	In the ECO cycle, we perform various analysis one by one for every check which we need to close but not closed till PnR stage. 
+
+•	There are specialized signoff tools that help us to analyze the issue and suggest the changes we need to do in order to close the issue. 
+
+•	The suggested change is captured in an eco file.
+
+Run file,
+
+![image](https://user-images.githubusercontent.com/87753795/220822906-d9d556ae-b056-408e-a2e2-2ccf514394a8.png)
+
+ECO and design file comparison,
+
+![image](https://user-images.githubusercontent.com/87753795/220822954-c4a9de3c-2d50-4885-b4b0-3ed7e7335031.png)
+
+
+Timing Analysis: output,
+
+![image](https://user-images.githubusercontent.com/87753795/220822999-8be4660f-177f-4476-97e7-f82867015c15.png)
+
+
+
 
