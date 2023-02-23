@@ -16,6 +16,8 @@ Setup slack calculation,
 Setup slack = data required time – data arrival time
 Arrival time should always be less than the required time. Slack value should be positive. If we get negative value, then we need to fix.
 
+LAB 1
+
 OpenSTA
 
 OpenSTA is a static analysis tool, used to verify the timing of the design. Incremental updating of delays, arrivals, and required times are done using queries.
